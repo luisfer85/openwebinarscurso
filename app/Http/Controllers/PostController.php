@@ -41,6 +41,11 @@ class PostController extends Controller
 
         $post->create($request->except('csrf'));        
         return $post->toJson();
+    }
 
+    public function destroy($id)
+    {
+        Post::destroy($id);
+        return 1;
     }
 }

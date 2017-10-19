@@ -19,11 +19,17 @@ Route::get('welcome', function () {
 });
 
 Route::get('post/{id}', [
-    'uses' => 'PostController@show'
+    'uses' => 'PostController@show',
 ]);
 
 Route::post('post/store', [
     'Middleware' => 'auth',
     'before' => 'csrf',
-    'uses' => 'PostController@store'
+    'uses' => 'PostController@store',
+]);
+
+Route::get('post/delete/{id}', [
+    //No utilizo la autenticacion para poder probar el ejemplo ahora
+    //'Middleware' => 'auth',
+    'uses' => 'PostController@destroy',
 ]);
