@@ -20,8 +20,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' ==> 'required|unique:posts|max:255',
-            'body' ==> 'required',
+            'title' => 'required|unique:posts|max:255',
+            'body' => 'required',
         ]);
 
         if($validator->fails()) {
