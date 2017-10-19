@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('post/{id}', [
     'uses' => 'PostController@show'
 ]);
+
+Route::get('post/store', [
+	'Middleware' => 'auth',
+    'uses' => 'PostController@store'
+]);
