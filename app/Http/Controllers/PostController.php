@@ -22,7 +22,8 @@ class PostController extends Controller
 
     public function show($id)
     {
-    	return "Showing post " . $id;
+        $post = Post::find($id);
+        return $post->toJson();
     }
 
     public function store(Request $request)
