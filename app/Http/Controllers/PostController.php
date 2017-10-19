@@ -5,11 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 
+use App\Post;
+
 class PostController extends Controller
 {
     public function __construct()
     {
         //
+    }
+
+    public function index()
+    {
+        $posts = Post::all();
+        return $posts->toJson();
     }
 
     public function show($id)

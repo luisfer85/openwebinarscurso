@@ -10,8 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::pattern('id', '\d+');
 
-Route::get('/', function () {
+Route::get('/', 'PostController@index');
+
+Route::get('welcome', function () {
     return view('welcome');
 });
 
