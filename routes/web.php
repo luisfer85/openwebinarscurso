@@ -22,7 +22,8 @@ Route::get('post/{id}', [
     'uses' => 'PostController@show'
 ]);
 
-Route::get('post/store', [
-	'Middleware' => 'auth',
+Route::post('post/store', [
+    'Middleware' => 'auth',
+    'before' => 'csrf',
     'uses' => 'PostController@store'
 ]);

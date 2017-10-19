@@ -39,6 +39,8 @@ class PostController extends Controller
             ->withInput();
         }
 
-        //Store post
+        $post->create($request->except('csrf'));        
+        return $post->toJson();
+
     }
 }
