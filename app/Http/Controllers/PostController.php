@@ -51,6 +51,8 @@ class PostController extends Controller
 
     public function blog()
     {
-        return view('blog.index');
+        $posts = Post::all();
+        //return view('blog.index')->with(['posts' => $posts]);
+        return view('blog.index', compact('posts'));
     }
 }
