@@ -48,4 +48,9 @@ class PostController extends Controller
         Post::destroy($id);
         return 1;
     }
+
+    public function blog()
+    {
+        return view('blog.index');
+    }
 }

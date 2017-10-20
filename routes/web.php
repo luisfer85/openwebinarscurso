@@ -18,6 +18,9 @@ Route::get('welcome', function () {
     return view('welcome');
 });
 
+Route::get('blog', 'PostController@blog');
+
+
 Route::get('post/{id}', [
     'uses' => 'PostController@show',
 ]);
