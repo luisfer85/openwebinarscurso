@@ -43,6 +43,11 @@ class PostController extends Controller
         return $post->toJson();
     }
 
+    public function create()
+    {
+        return view('dashboard.post.create');
+    }
+
     public function destroy($id)
     {
         Post::destroy($id);

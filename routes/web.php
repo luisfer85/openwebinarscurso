@@ -32,10 +32,15 @@ Route::post('post/store', [
 ]);
 
 Route::get('post/delete/{id}', [
-    //No utilizo la autenticacion para poder probar el ejemplo ahora
-    //'middleware' => 'auth',
+    'middleware' => 'auth',
     'uses' => 'PostController@destroy',
 ]);
+
+Route::get('post/create', [
+    'middleware' => 'auth',
+    'uses' => 'PostController@create',
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
