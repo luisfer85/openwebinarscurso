@@ -26,13 +26,16 @@ Route::get('post/{id}', [
 ]);
 
 Route::post('post/store', [
-    'Middleware' => 'auth',
+    'middleware' => 'auth',
     'before' => 'csrf',
     'uses' => 'PostController@store',
 ]);
 
 Route::get('post/delete/{id}', [
     //No utilizo la autenticacion para poder probar el ejemplo ahora
-    //'Middleware' => 'auth',
+    //'middleware' => 'auth',
     'uses' => 'PostController@destroy',
 ]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
