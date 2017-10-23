@@ -40,7 +40,8 @@ class PostController extends Controller
         }
 
         $post = Post::create($request->except('csrf'));
-        return $post->toJson();
+        //return $post->toJson();
+        return redirect(url('blog'));
     }
 
     public function create()
