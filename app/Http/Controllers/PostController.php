@@ -39,7 +39,7 @@ class PostController extends Controller
             ->withInput();
         }
 
-        $post->create($request->except('csrf'));        
+        $post = Post::create($request->except('csrf'));
         return $post->toJson();
     }
 
